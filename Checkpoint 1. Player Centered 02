@@ -1,0 +1,34 @@
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+
+class Scene;
+
+#include <QMainWindow>
+
+namespace Ui
+{
+class MainWindow;
+}
+
+/*************************************************************************************/
+/*********************** Main application window for QSimulate ***********************/
+/*************************************************************************************/
+
+//This class runs the show/game.
+class MainWindow : public QMainWindow
+{
+    Q_OBJECT
+
+public:
+    explicit MainWindow(QWidget *parent = 0);
+    ~MainWindow();
+
+public slots:
+  void showMessage( QString );        // show message on status bar
+
+private:
+    Ui::MainWindow *ui;
+    Scene* m_scene;
+};
+
+#endif // MAINWINDOW_H
